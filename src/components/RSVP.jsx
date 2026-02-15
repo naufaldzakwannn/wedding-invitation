@@ -16,7 +16,6 @@ export default function RSVP() {
 
   return (
     <section className="py-20 text-center bg-gradient-to-b from-rose-50 to-pink-50 relative overflow-hidden">
-      {/* Decorative Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 w-20 h-20 bg-rose-300 rounded-full"></div>
         <div className="absolute bottom-10 right-10 w-18 h-18 bg-pink-300 rounded-full"></div>
