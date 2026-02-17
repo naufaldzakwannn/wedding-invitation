@@ -26,7 +26,7 @@ function App() {
       {opened && (
         <main className="max-w-4xl mx-auto px-4">
           <ThemeToggle />
-          <MusicPlayer />
+          {/* <MusicPlayer /> */}
 
           <Hero />
           <GuestName />
