@@ -17,15 +17,35 @@ import Animate from "./components/Animate";
 
 function App() {
   const [opened, setOpened] = useState(false);
+  const [coverVisible, setCoverVisible] = useState(true);
+  const [loading, setLoading] = useState(true);
+
+  const handleOpen = () => {
+    setOpened(true);
+    setTimeout(() => setCoverVisible(false), 800); // Fade out duration
+  };
 
   return (
     <>
-      {/* COVER UNDANGAN */}
-      {!opened && <InvitationCover onOpen={() => setOpened(true)} />}
+      {coverVisible && (
+        <div
+          style={{
+            opacity: opened ? 0 : 1,
+            transition: "opacity 800ms ease-out",
+            pointerEvents: opened ? "none" : "auto",
+          }}
+        >
+          <InvitationCover onOpen={handleOpen} />
+        </div>
+      )}
 
-      {/* ISI UNDANGAN */}
       {opened && (
-        <div className="overflow-hidden">
+        <div
+          style={{
+            opacity: opened ? 1 : 0,
+            transition: "opacity 800ms ease-in 400ms",
+          }}
+        >
           <ThemeToggle />
           <MusicPlayer />
 
